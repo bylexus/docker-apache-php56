@@ -1,13 +1,11 @@
-FROM ubuntu:14.04
+FROM debian:jessie
 MAINTAINER Alexander Schenkel <alex@alexi.ch>
 
 VOLUME ["/var/www"]
 
 RUN apt-get update && \
-    apt-get install -y software-properties-common && \
-    LANG=C.UTF-8 add-apt-repository ppa:ondrej/php5-5.6 && \
-    apt-get update && \
     apt-get install -y \
+      locales \
       apache2 \
       php5 \
       php5-cli \

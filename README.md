@@ -1,12 +1,12 @@
-apache-php
+apache-php56
 ===================================
 
-A Docker image based on Ubuntu, serving PHP 5.6 running as Apache Module. Useful for Web developers in need for a fixed PHP version. In addition, the `error_reporting` setting in php.ini is configurable per container via environment variable.
+A Docker image based on Debian Jessie, serving PHP 5.6 running as Apache Module. Useful for Web developers in need for a fixed PHP version. In addition, the `error_reporting` setting in php.ini is configurable per container via environment variable.
 
 Tags
 -----
 
-* latest: Ubuntu 14.04 (LTS), Apache 2.4, PHP 5.6.11 (from ppa:ondrej/php5-5.6) with support for setting `error_reporting`
+* latest: Debian 8 (Jessie), Apache 2.4, PHP 5.6.x with support for setting `error_reporting`
 
 Usage
 ------
@@ -37,7 +37,8 @@ Apache is configured to log both access and error log to STDOUT. So you can simp
 
 Installed packages
 -------------------
-* Ubuntu Server 14.04, based on ubuntu docker image
+* Debian 8 (jessie)
+* locales
 * apache2
 * php5
 * php5-cli
@@ -54,4 +55,4 @@ Configurations
 * Apache: .htaccess-Enabled in webroot (mod_rewrite with AllowOverride all)
 * php.ini:
   * display_errors = On
-  * error_reporting = E_ALL & ~E_DEPRECATED & ~E_NOTICE (default, overridable per env variable)
+  * error_reporting = E_ALL (default, overridable per env variable)
